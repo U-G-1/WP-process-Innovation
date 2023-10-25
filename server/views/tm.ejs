@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Map CSS -->
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css"
+    />
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+
+    <!-- Title -->
+    <title>Dashkit</title>
+  </head>
+  <body>
+    <!--nav-->
+    <%- include('./nav.ejs') %>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <!-- Pretitle -->
+                    <!-- <h6 class="header-pretitle">
+                      New project
+                    </h6> -->
+
+                    <!-- Title -->
+                    <h1 class="header-title">TM 발행</h1>
+                  </div>
+                  <div class="col-auto">
+                    <!-- Buttons -->
+
+                    <a href="#!" class="btn btn-primary ms-2 lift"> TM </a>
+                  </div>
+                </div>
+                <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+
+            <form class="mb-4" action="/tmRq/transfer" method="POST">
+              <!-- 설비 -->
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="form-label">설비번호</label>
+                    <!-- Select*************** -->
+                    <select id="tm_equip" name="tm_equip" class="form-control">
+                      <option value="">Select...</option>
+                      <option value="1">1</option>
+                      ...
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="form-label"> 설비명 </label>
+
+                    <!-- Input: remove readonly attribute -->
+                    <input
+                      type="text"
+                      id="tm_equip_name"
+                      name="tm_equip_name"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- / .row -->
+
+              <!-- 요청명 -->
+              <div class="form-group">
+                <!-- Label  -->
+                <label class="form-label"> 요청명 </label>
+
+                <!-- Input -->
+                <input type="text" name="tm_req_title" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <!-- Label  -->
+                <label class="form-label"> 요청일시 </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" data-flatpickr />
+              </div>
+
+              <div>
+                <label class="form-label"> 요청부서 </label>
+              </div>
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <!-- Select -->
+                    <input
+                      type="text"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+
+                    <input
+                      type="text"
+                      name="tm_req_sym"
+                      class="form-control"
+                      value="<%= user.dataValues.bal_sub_dep %>"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <!-- Label  -->
+                <label class="form-label"> 요청자 </label>
+
+                <!-- Input -->
+                <input
+                  type="text"
+                  class="form-control"
+                  value="<%= user.dataValues.bal_name %>"
+                  readonly
+                />
+              </div>
+              <!--감독부서-->
+              <div>
+                <label class="form-label"> 감독부서 </label>
+                <button>+</button>
+              </div>
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <!-- Select -->
+                    <select
+                      class="form-control"
+                      id="sup_dept_num_1"
+                      name="sup_dept_num_1"
+                      style="height: 43px"
+                    >
+                      <option value="">Select...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      ...
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="form-label"> 감독부서명 </label>
+                    <input
+                      type="text"
+                      id="sup_dept_name_1"
+                      name="sup_dept_name_1"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label"> 감독부서(2) </label>
+              </div>
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <!-- Select -->
+                    <select
+                      class="form-control"
+                      id="sup_dept_num_2"
+                      name="sup_dept_num_2"
+                      style="height: 43px"
+                    >
+                      <option value="">Select...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      ...
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="form-label"> 감독부서명 </label>
+                    <input
+                      type="text"
+                      id="sup_dept_name_2"
+                      name="sup_dept_name_2"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label class="form-label"> 감독부서(3) </label>
+              </div>
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <!-- Select -->
+                    <select
+                      class="form-control"
+                      id="sup_dept_num_3"
+                      name="sup_dept_num_3"
+                      style="height: 43px"
+                    >
+                      <option value="">Select...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      ...
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="form-label"> 감독부서명 </label>
+                    <input
+                      type="text"
+                      id="sup_dept_name_3"
+                      name="sup_dept_name_3"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label"> 증상번호 </label>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Select -->
+                    <select
+                      class="form-control"
+                      id="symptom_num"
+                      name="symptom_num"
+                      style="height: 43px"
+                    >
+                      <option value="">Select...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      ...
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <label class="form-label"> 증상명 </label>
+                    <input
+                      type="text"
+                      id="symptom_name"
+                      name="symptom_name"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- / .row -->
+
+              <!-- Project description -->
+              <div class="form-group">
+                <!-- Label -->
+                <label class="form-label mb-1"> 요청 내용 </label>
+
+                <!-- Text -->
+                <!-- <small class="form-text text-muted">
+                  This is how others will learn about the project, so make it good!
+                </small> -->
+
+                <!-- Textarea -->
+                <textarea
+                  id="tm_req_txt"
+                  name="tm_req_txt"
+                  class="form-control"
+                ></textarea>
+              </div>
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5" />
+
+              <!-- Buttons -->
+              <button type="submit" class="btn w-100 btn-primary">
+                TM 발행
+              </button>
+              <a href="#" class="btn w-100 btn-link text-muted mt-2">
+                발행 취소
+              </a>
+            </form>
+          </div>
+        </div>
+        <!-- / .row -->
+      </div>
+    </div>
+    <!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+
+    <!-- Vendor JS -->
+    <script src="./assets/js/vendor.bundle.js"></script>
+
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.bundle.js"></script>
+
+    <script type="text/javascript">
+      // Mapping for equipment number and name
+      const equipMap = {
+        1: "설비명1",
+        2: "설비명2",
+        // Add more mappings as needed
+      };
+      // Event listener for equipment number selection
+      document
+        .querySelector("#tm_equip")
+        .addEventListener("change", function () {
+          document.querySelector("#tm_equip_name").value = equipMap[this.value];
+        });
+
+      // Event listener for equipment name input
+      document
+        .querySelector("#tm_equip_name")
+        .addEventListener("input", function () {
+          const number = Object.keys(equipMap).find(
+            (key) => equipMap[key] === this.value
+          );
+          const selectElement = document.querySelector("#tm_equip");
+          const optionElement = Array.from(selectElement.options).find(
+            (option) => option.value === number
+          );
+
+          if (optionElement) {
+            optionElement.selected = true;
+          } else {
+            selectElement.selectedIndex = -1;
+          }
+        });
+
+      // Mapping for supervisor department number and name
+      const supDeptMaps = [
+        {
+          map: {
+            1: "감독부서명 1",
+            2: "감독부서명 2",
+            3: "감독부서명 3",
+            4: "감독부서명 4",
+          },
+          numSelectId: "#sup_dept_num_1",
+          nameInputId: "#sup_dept_name_1",
+        },
+        {
+          map: {
+            1: "감독부서명 1",
+            2: "감독부서명 2",
+            3: "감독부서명 3",
+            4: "감독부서명 4",
+          },
+          numSelectId: "#sup_dept_num_2",
+          nameInputId: "#sup_dept_name_2",
+        },
+        {
+          map: {
+            1: "감독부서명 1",
+            2: "감독부서명 2",
+            3: "감독부서명 3",
+            4: "감독부서명 4",
+          },
+          numSelectId: "#sup_dept_num_3",
+          nameInputId: "#sup_dept_name_3",
+        },
+      ];
+
+      // Add event listeners for each supervisor department field pair
+      for (let i = 0; i < supDeptMaps.length; i++) {
+        const supDeptMapObj = supDeptMaps[i];
+        document
+          .querySelector(supDeptMapObj.numSelectId)
+          .addEventListener("change", function () {
+            document.querySelector(supDeptMapObj.nameInputId).value =
+              supDeptMapObj.map[this.value];
+          });
+      }
+
+      const symptomMap = {
+        1: "증상명1",
+        2: "증상명2",
+        3: "증상명3",
+        // Add more mappings as needed
+      };
+
+      // Event listener for symptom number selection
+      document
+        .querySelector("#symptom_num")
+        .addEventListener("change", function () {
+          document.querySelector("#symptom_name").value =
+            symptomMap[this.value];
+        });
+
+      // Event listener for symptom name input
+      document
+        .querySelector("#symptom_name")
+        .addEventListener("input", function () {
+          const number = Object.keys(symptomMap).find(
+            (key) => symptomMap[key] === this.value
+          );
+          const selectElement = document.querySelector("#symptom_num");
+          const optionElement = Array.from(selectElement.options).find(
+            (option) => option.value === number
+          );
+
+          if (optionElement) {
+            optionElement.selected = true;
+          } else {
+            selectElement.selectedIndex = -1;
+          }
+        });
+    </script>
+  </body>
+</html>

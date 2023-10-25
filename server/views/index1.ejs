@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon"/>
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Dashkit</title>
+  </head>
+  <body>
+
+    <!--nav-->
+    <%- include('./nav.ejs') %>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      
+      
+
+      <!-- HEADER -->
+      <div class="header">
+        <div class="container-fluid">
+  
+          <!-- Body -->
+          <div class="header-body">
+            <div class="row align-items-end">
+              <div class="col">
+  
+                <!-- Pretitle -->
+                <!-- <h6 class="header-pretitle">
+                  Overview
+                </h6> -->
+  
+                <!-- Title -->
+                <h1 class="header-title">
+                  GENi 경상정비 작업현황
+                </h1>
+  
+              </div>
+              <div class="col-auto">
+  
+                <!-- Button -->
+                <a href="#!" class="btn btn-primary lift">
+                  운영데이터 확인
+                </a>
+  
+              </div>
+            </div> <!-- / .row -->
+          </div> <!-- / .header-body -->
+  
+        </div>
+      </div> <!-- / .header -->
+  
+      <!-- CARDS -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl">
+  
+            <!-- Value  -->
+            
+  
+          </div>
+          <div class="col-12 col-lg-6 col-xl">
+  
+            <!-- Hours -->
+            
+  
+          </div>
+          <div class="col-12 col-lg-6 col-xl">
+  
+            <!-- Exit -->
+            
+  
+          </div>
+          <div class="col-12 col-lg-6 col-xl">
+  
+            <!-- Time -->
+            <div class="card">
+              <div class="card-body">
+                <div class="row align-items-center gx-0">
+                  <div class="col">
+  
+                    <!-- Title -->
+                    <h6 class="text-uppercase text-muted mb-2">
+                      일자선택
+                    </h6>
+  
+                    <!-- Heading -->
+                    <span class="h2 mb-0">
+                      23.9.16.
+                    </span>
+  
+                  </div>
+                  <div class="col-auto">
+  
+                    <!-- Icon 시계 아이콘 -->
+                    <span class="h2 fe fe-clock text-muted mb-0"></span>
+  
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+  
+          </div>
+        </div> <!-- / .row -->
+        <div class="row">
+          <div class="col-12 col-xl-8">
+  
+            <!-- Convertions -->
+            <div class="card">
+              <div class="card-header">
+  
+                <!-- Title -->
+                <h4 class="card-header-title">
+                  호기별 위험 작업 현황
+                </h4>
+  
+                <!-- Caption -->
+                <!-- <span class="text-muted me-3">
+                  Last year comparision:
+                </span> -->
+  
+                <!-- Switch -->
+                <!-- <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="cardToggle" data-toggle="chart" data-target="#conversionsChart" data-trigger="change" data-action="add" data-dataset="1" />
+                  <label class="form-check-label" for="cardToggle"></label>
+                </div> -->
+  
+              </div>
+              <div class="card-body">
+  
+                <!-- Chart -->
+                <div class="chart">
+                  <canvas id="conversionsChart" class="chart-canvas"></canvas>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-4">
+  
+            <!-- Traffic -->
+            <div class="card">
+              <div class="card-header">
+  
+                <!-- Title -->
+                <h4 class="card-header-title">
+                  작업 구분별 위험 작업 현황
+                </h4>
+  
+                <!-- Tabs -->
+                <!-- <ul class="nav nav-tabs nav-tabs-sm card-header-tabs">
+                  <li class="nav-item" data-toggle="chart" data-target="#trafficChart" data-trigger="click" data-action="toggle" data-dataset="0">
+                    <a href="#" class="nav-link active" data-bs-toggle="tab">
+                      All
+                    </a>
+                  </li>
+                  <li class="nav-item" data-toggle="chart" data-target="#trafficChart" data-trigger="click" data-action="toggle" data-dataset="1">
+                    <a href="#" class="nav-link" data-bs-toggle="tab">
+                      Direct
+                    </a>
+                  </li>
+                </ul> -->
+  
+              </div>
+              <div class="card-body">
+  
+                <!-- Chart -->
+                <div class="chart chart-appended">
+                  <canvas id="trafficChart" class="chart-canvas" data-toggle="legend" data-target="#trafficChartLegend"></canvas>
+                </div>
+  
+                <!-- Legend -->
+                <div id="trafficChartLegend" class="chart-legend"></div>
+  
+              </div>
+            </div>
+          </div>
+        </div> <!-- / .row -->
+        <div class="row">
+          
+          
+        </div> <!-- / .row -->
+        <div class="row">
+          <div class="col-12">
+  
+            <!-- Goals -->
+            <div class="card">
+              <div class="card-header">
+                <div class="row align-items-center">
+                  <div class="col">
+  
+                    <!-- Title -->
+                    <h4 class="card-header-title">
+                      나의 작업 목록
+                    </h4>
+  
+                  </div>
+                  <div class="col-auto">
+  
+                    <!-- Button -->
+                    <a href="#!" class="btn btn-sm btn-white">
+                      TM 발행
+                    </a>
+  
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+              <div class="table-responsive mb-0" data-list="{&quot;valueNames&quot;: [&quot;goal-project&quot;, &quot;goal-status&quot;, &quot;goal-progress&quot;, &quot;goal-date&quot;]}">
+                <table class="table table-sm table-nowrap card-table">
+                  <thead>
+                    <tr>
+                      <th>
+                        <a href="#" class="text-muted list-sort" data-sort="goal-project">
+                          Goal
+                        </a>
+                      </th>
+                      <th>
+                        <a href="#" class="text-muted list-sort" data-sort="goal-status">
+                          Status
+                        </a>
+                      </th>
+                      <th>
+                        <a href="#" class="text-muted list-sort" data-sort="goal-progress">
+                          Progress
+                        </a>
+                      </th>
+                      <th>
+                        <a href="#" class="text-muted list-sort" data-sort="goal-date">
+                          Due date
+                        </a>
+                      </th>
+                      <th class="text-end">
+                        Team
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="list">
+                    <tr>
+                      <td class="goal-project">
+                        Update the API
+                      </td>
+                      <td class="goal-status">
+                        <span class="text-warning">●</span> In progress
+                      </td>
+                      <td class="goal-progress">
+                        55%
+                      </td>
+                      <td class="goal-date">
+                        <time datetime="2018-10-24">07/24/18</time>
+                      </td>
+                      <td class="text-end">
+                        <div class="avatar-group">
+                          <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Daniela Dewitt">
+                            <img src="assets/img/avatars/profiles/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="text-end">
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="goal-project">
+                        Release v1.2-Beta
+                      </td>
+                      <td class="goal-status">
+                        <span class="text-warning">●</span> In progress
+                      </td>
+                      <td class="goal-progress">
+                        25%
+                      </td>
+                      <td class="goal-date">
+                        <time datetime="2018-10-24">08/26/18</time>
+                      </td>
+                      <td class="text-end">
+                        <div class="avatar-group justify-content-end">
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="text-end">
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="goal-project">
+                        GDPR Compliance
+                      </td>
+                      <td class="goal-status">
+                        <span class="text-success">●</span> Completed
+                      </td>
+                      <td class="goal-progress">
+                        100%
+                      </td>
+                      <td class="goal-date">
+                        <time datetime="2018-10-24">06/19/18</time>
+                      </td>
+                      <td class="text-end">
+                        <div class="avatar-group justify-content-end">
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="text-end">
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="goal-project">
+                        v1.2 Documentation
+                      </td>
+                      <td class="goal-status">
+                        <span class="text-danger">●</span> Cancelled
+                      </td>
+                      <td class="goal-progress">
+                        0%
+                      </td>
+                      <td class="goal-date">
+                        <time datetime="2018-10-24">06/25/18</time>
+                      </td>
+                      <td class="text-end">
+                        <div class="avatar-group justify-content-end">
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="text-end">
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fe fe-more-vertical"></span>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="goal-project">
+                        Plan design offsite
+                      </td>
+                      <td class="goal-status">
+                        <span class="text-success">●</span> Completed
+                      </td>
+                      <td class="goal-progress">
+                        100%
+                      </td>
+                      <td class="goal-date">
+                        <time datetime="2018-10-24">06/30/18</time>
+                      </td>
+                      <td class="text-end">
+                        <div class="avatar-group justify-content-end">
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Daniela Dewitt">
+                            <img src="assets/img/avatars/profiles/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="text-end">
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Red tag 회수
+                            </a>
+                            
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+  
+          </div>
+        </div> <!-- / .row -->
+        
+      </div>
+
+    </div><!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="./assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>

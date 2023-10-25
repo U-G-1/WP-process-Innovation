@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Dashkit"}}
+  </head>
+  <body>
+
+    <!-- MODALS -->
+    {{> partials/modals}}
+
+    <!-- OFFCANVAS -->
+    {{> partials/offcanvas}}
+
+    <!-- NAVIGATION -->
+    {{> partials/navs category="pages" subcategory="project" page="project-new.html"}}
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      {{#if demoMode}}{{> navs/topbar}}{{/if}}
+      {{#is navPosition 'combo'}}{{> navs/topbar}}{{/is}}
+
+      <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <!-- <h6 class="header-pretitle">
+                      New project
+                    </h6> -->
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                      기기 점검 결과 보고서
+                    </h1>
+
+                  </div>
+                  
+                </div> <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4">
+
+                <!-- 업무 연락 -->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  업무 연락
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" >
+
+              </div>
+
+              <!--점검 결과-->
+              <div>
+                <h3 class="mb-3">점검 결과</h>
+              </div>
+              <!-- 점검 결과 -->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      점검 부위
+                    </label>
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      점검 내용
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        점검 결과
+                      </label>
+  
+                      <input type="text" class="form-control" >
+  
+                    </div>
+  
+                  </div>
+              </div> <!-- / .row -->
+
+              <!--필요 자재-->
+              <div>
+                <h3 class="mb-3">필요 자재</h>
+              </div>
+              <!-- 필요 자재 -->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      자재 품번 및 규격
+                    </label>
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      수요 수량
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+
+                <div class="col-12 col-md-6">
+
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        비고
+                      </label>
+  
+                      <input type="text" class="form-control" >
+  
+                    </div>
+  
+                  </div>
+              </div> <!-- / .row -->
+              
+              <!--핵심 품질 관리 항목-->
+              <div>
+                <h3 class="mb-3">핵심 품질 관리 항목</h>
+              </div>
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  필수 사항 및 검사 항목
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" >
+
+              </div>
+
+              
+
+              
+
+              
+
+             
+
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5">
+
+              <div class="col-auto" >
+
+                <!-- Buttons -->
+                
+                <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                  정비부서 결재상신
+                </a>
+                <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                    결재상신
+                </a>
+
+              </div>
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+  </body>
+</html>

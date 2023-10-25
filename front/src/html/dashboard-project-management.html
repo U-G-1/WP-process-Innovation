@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Dashkit"}}
+  </head>
+  <body>
+
+    <!-- MODALS -->
+    {{> partials/modals}}
+
+    <!-- OFFCANVAS -->
+    {{> partials/offcanvas}}
+
+    <!-- NAVIGATION -->
+    {{> partials/navs category="dashboards" page="dashboard-project-management.html"}}
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      {{#if demoMode}}{{> navs/topbar}}{{/if}}
+      {{#is navPosition 'combo'}}{{> navs/topbar}}{{/is}}
+
+      <!-- HEADER -->
+      <div class="header">
+        <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}">
+
+          <!-- Body -->
+          <div class="header-body">
+            <div class="row align-items-end">
+              <div class="col">
+
+                <!-- Pretitle -->
+                <!-- <h6 class="header-pretitle text-secondary">
+                  Overview
+                </h6> -->
+
+                <!-- Title -->
+                <h1 class="header-title">
+                  경상정비 전체 현황
+                </h1>
+
+              </div>
+              <div class="col-auto">
+
+                <!-- Nav -->
+                <ul class="nav nav-tabs header-tabs">
+                  <li class="nav-item" data-toggle="chart" data-target="#earningsChart" data-trigger="click" data-action="toggle" data-dataset="0">
+                    <a href="#" class="nav-link text-center active" data-bs-toggle="tab">
+                      <!-- <h6 class="header-pretitle text-secondary">
+                        Earnings
+                      </h6> -->
+                      <h3 class="mb-0">
+                        5호기
+                      </h3>
+                    </a>
+                  </li>
+                  <li class="nav-item" data-toggle="chart" data-target="#earningsChart" data-trigger="click" data-action="toggle" data-dataset="1">
+                    <a href="#" class="nav-link text-center" data-bs-toggle="tab">
+                      <!-- <h6 class="header-pretitle text-secondary">
+                        Sessions
+                      </h6> -->
+                      <h3 class="mb-0">
+                        6호기
+                      </h3>
+                    </a>
+                  </li>
+                  <li class="nav-item" data-toggle="chart" data-target="#earningsChart" data-trigger="click" data-action="toggle" data-dataset="2">
+                    <a href="#" class="nav-link text-center" data-bs-toggle="tab">
+                      <!-- <h6 class="header-pretitle text-secondary">
+                        Bounce
+                      </h6> -->
+                      <h3 class="mb-0">
+                        제5,6호기 공용설비
+                      </h3>
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+            </div> <!-- / .row -->
+          </div> <!-- / .header-body -->
+
+          <!-- Footer -->
+          <div class="header-footer">
+
+            <!-- Chart -->
+            <div class="chart">
+              <canvas id="earningsChart" class="chart-canvas"></canvas>
+            </div>
+
+          </div>
+
+        </div>
+      </div> <!-- / .header -->
+
+      <!-- CARDS -->
+      <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}">
+        <div class="row">
+          <!-- <div class="col-12 col-xl-8"> -->
+
+            <!-- Projects -->
+            <div class="card">
+              <div class="card-header">
+
+                <!-- Title -->
+                <h4 class="card-header-title">
+                  경상정비 최근 현황
+                </h4>
+
+                <!-- Button -->
+                <a href="#!" class="btn btn-sm btn-white">
+                  전체 열람
+                </a>
+
+              </div>
+              <div class="table-responsive mb-0" data-list='{"valueNames": ["project-project", "project-status", "project-progress", "project-date"]}'>
+                <table class="table table-sm table-nowrap card-table table-hover">
+                  <thead>
+                    <tr>
+                      <th>
+                        <a href="#" class="text-muted list-sort" data-sort="project-project">
+                          Project
+                        </a>
+                      </th>
+                      <th>
+                        <a href="#" class="text-muted list-sort" data-sort="project-status">
+                          Status
+                        </a>
+                      </th>
+                      <th>
+                        <a href="#" class="text-muted list-sort" data-sort="project-progress">
+                          Progress
+                        </a>
+                      </th>
+                      <th>
+                        <a href="#" class="text-muted list-sort" data-sort="project-date">
+                          Due date
+                        </a>
+                      </th>
+                      <th class="text-end">
+                        Team
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="list">
+                    <tr>
+                      <td class="project-project">
+
+                        <!-- Heading -->
+                        <h4 class="fw-normal mb-1">Update the API</h4>
+
+                        <!-- Text  -->
+                        <small class="text-muted">Oki Doki Collective</small>
+
+                      </td>
+                      <td class="project-status">
+
+                        <!-- Badge -->
+                        <span class="badge bg-warning-soft">In progress</span>
+
+                      </td>
+                      <td class="project-progress">
+                        <div class="d-flex align-items-center">
+
+                          <!-- Value -->
+                          <div class="me-3">55%</div>
+
+                          <!-- Progress -->
+                          <div class="progress progress-sm" style="min-width: 40px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td class="project-date">
+
+                        <!-- Time -->
+                        <time datetime="2018-10-24">07/24/18</time>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Avatar group -->
+                        <div class="avatar-group">
+                          <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="profile-posts.html" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Daniela Dewitt">
+                            <img src="assets/img/avatars/profiles/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Dropdown -->
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="project-project">
+
+                        <!-- Heading -->
+                        <h4 class="fw-normal mb-1">Release v1.2-Beta</h4>
+
+                        <!-- Text -->
+                        <small class="text-muted">Oki Doki Collective</small>
+
+                      </td>
+                      <td class="project-status">
+
+                        <!-- Badge -->
+                        <span class="badge bg-warning-soft">In progress</span>
+
+                      </td>
+                      <td class="project-progress">
+                        <div class="d-flex align-items-center">
+
+                          <!-- Value -->
+                          <div class="me-3">25%</div>
+
+                          <!-- Progress -->
+                          <div class="progress progress-sm" style="min-width: 40px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td class="project-date">
+
+                        <!-- Time -->
+                        <time datetime="2018-10-24">08/26/18</time>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Avatar group -->
+                        <div class="avatar-group justify-content-end">
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Dropdown -->
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="project-project">
+
+                        <!-- Heading -->
+                        <h4 class="fw-normal mb-1">GDPR Compliance</h4>
+
+                        <!-- Text -->
+                        <small class="text-muted">Oki Doki Collective</small>
+
+                      </td>
+                      <td class="project-status">
+
+                        <!-- Badge -->
+                        <span class="badge bg-success-soft">Completed</span>
+
+                      </td>
+                      <td class="project-progress">
+                        <div class="d-flex align-items-center">
+
+                          <!-- Value -->
+                          <div class="me-3">100%</div>
+
+                          <!-- Progress -->
+                          <div class="progress progress-sm" style="min-width: 40px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td class="project-date">
+
+                        <!-- Time -->
+                        <time datetime="2018-10-24">06/19/18</time>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Avatar group -->
+                        <div class="avatar-group justify-content-end">
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Dropdown -->
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="project-project">
+
+                        <!-- Heading -->
+                        <h4 class="fw-normal mb-1">v1.2 Documentation</h4>
+
+                        <!-- Text  -->
+                        <small class="text-muted">Oki Doki Collective</small>
+
+                      </td>
+                      <td class="project-status">
+
+                        <!-- Badge -->
+                        <span class="badge bg-danger-soft">Cancelled</span>
+
+                      </td>
+                      <td class="project-progress">
+                        <div class="d-flex align-items-center">
+
+                          <!-- Value -->
+                          <div class="me-3">0%</div>
+
+                          <!-- Progress -->
+                          <div class="progress progress-sm" style="min-width: 40px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td class="project-date">
+
+                        <!-- Time -->
+                        <time datetime="2018-10-24">06/25/18</time>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Avatar group -->
+                        <div class="avatar-group justify-content-end">
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Dropdown -->
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fe fe-more-vertical"></span>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="project-project">
+
+                        <!-- Heading -->
+                        <h4 class="fw-normal mb-1">Plan design offsite</h4>
+
+                        <!-- Text -->
+                        <small class="text-muted">Oki Doki Collective</small>
+
+                      </td>
+                      <td class="project-status">
+
+                        <!-- Badge -->
+                        <span class="badge bg-success-soft">Completed</span>
+
+                      </td>
+                      <td class="project-progress">
+                        <div class="d-flex align-items-center">
+
+                          <!-- Value -->
+                          <div class="me-3">100%</div>
+
+                          <!-- Progress -->
+                          <div class="progress progress-sm" style="min-width: 40px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+
+                        </div>
+                      </td>
+                      <td class="project-date">
+
+                        <!-- Time -->
+                        <time datetime="2018-10-24">06/30/18</time>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Avatar group -->
+                        <div class="avatar-group justify-content-end">
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Dianna Smiley">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Ab Hadley">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Adolfo Hess">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                          <a href="#!" class="avatar avatar-xs" data-bs-toggle="tooltip" title="Daniela Dewitt">
+                            <img src="assets/img/avatars/profiles/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+                        </div>
+
+                      </td>
+                      <td class="text-end">
+
+                        <!-- Dropdown -->
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="dropdown-item">
+                              Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+          <!-- </div> -->
+          
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+  </body>
+</html>

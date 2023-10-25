@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Dashkit"}}
+  </head>
+  <body>
+
+    <!-- MODALS -->
+    {{> partials/modals}}
+
+    <!-- OFFCANVAS -->
+    {{> partials/offcanvas}}
+
+    <!-- NAVIGATION -->
+    {{> partials/navs category="pages" subcategory="project" page="project-new.html"}}
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      {{#if demoMode}}{{> navs/topbar}}{{/if}}
+      {{#is navPosition 'combo'}}{{> navs/topbar}}{{/is}}
+
+
+      <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <!-- <h6 class="header-pretitle">
+                      New project
+                    </h6> -->
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                      공사통보서 작성
+                    </h1>
+
+                  </div>
+                  
+                </div> <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4">
+
+                <div class="form-group">
+                    <div>
+                    <label class="form-label mb-1">
+                      품질 보증활동
+                    </label>
+                    </div>
+                    <div>
+                    <input type='checkbox' name='quality' value='1' /> 감독부서
+                    <input type='checkbox' name='quality' value='2' /> 품질부서
+                    <input type='checkbox' name='quality' value='3' /> 협력사
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label mb-1">
+                      통보내용
+                    </label>
+    
+                    <!-- Text -->
+                    <!-- <small class="form-text text-muted">
+                      This is how others will learn about the project, so make it good!
+                    </small> -->
+    
+                    <!-- Textarea -->
+                    <div data-quill></div>
+    
+                </div>
+             
+                <div class="col-auto" >
+
+                    <!-- Buttons -->
+                    <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                        추가
+                    </a>
+    
+                  </div>
+
+                  <!--조달구분-->
+                <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 조달 구분 </label>
+                      <select
+                        class="form-select mb-3"
+                        
+                        data-choices='{"searchEnabled": false, "choices": [
+                        {
+                          "value": "",
+                          "label": "&nbsp;",
+                          "selected": true,
+                          "disabled": true,
+                          "placeholder": true
+                        },
+                    {
+                      "value": "간이정비",
+                      "label": "지입",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "외주",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "임차",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    }
+                    
+                  ]}'
+                      >
+                        <!-- <option>1111</option>
+                        <option>2222</option>
+                        <option>3333</option>
+                        <option>4444</option> -->
+                      </select>
+                    </div>
+                </div>
+  
+                  <!--자재 유형-->
+                  <div class="row d-flex align-items-center">
+                    <div class="col-12 col-md-6">
+                      <!-- Start date -->
+                      <div class="form-group">
+                        <!-- Label -->
+                        <label class="form-label"> 자재 유형 </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          style="height: 43px"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <!-- Start date -->
+                      <div class="form-group">
+                        <!-- Label -->
+                        <label class="form-label"> 자재 번호 </label>
+                        <select
+                          class="form-select mb-3"
+                          data-choices='{"searchEnabled": false, "choices": [
+                          {
+                            "value": "",
+                            "label": "&nbsp;",
+                            "selected": true,
+                            "disabled": true,
+                            "placeholder": true
+                          },
+                      {
+                        "value": "간이정비",
+                        "label": "111",
+                        "customProperties": {
+                          "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                        }
+                      },
+                      {
+                        "value": "Ab Hadley",
+                        "label": "222",
+                        "customProperties": {
+                          "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                        }
+                      },
+                      {
+                        "value": "Ab Hadley",
+                        "label": "333",
+                        "customProperties": {
+                          "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                        }
+                      }
+                      
+                    ]}'
+                        >
+                          <!-- <option>1111</option>
+                          <option>2222</option>
+                          <option>3333</option>
+                          <option>4444</option> -->
+                        </select>
+                      </div>
+                    </div>
+                    
+                  </div>
+  
+                  <!--품명 및 규격-->
+                  <div class="row d-flex align-items-center">
+                    <div class="col-12 col-md-6">
+                      <!-- Start date -->
+                      <div class="form-group">
+                        <!-- Label -->
+                        <label class="form-label"> 품명 및 규격 </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          style="height: 43px"
+                          
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <!-- Start date -->
+                      <div class="form-group">
+                        <!-- Label -->
+                        <label class="form-label"> 단위 </label>
+                        <select
+                          class="form-select mb-3"
+                          data-choices='{"searchEnabled": false, "choices": [
+                          {
+                            "value": "",
+                            "label": "&nbsp;",
+                            "selected": true,
+                            "disabled": true,
+                            "placeholder": true
+                          },
+                      {
+                        "value": "간이정비",
+                        "label": "111",
+                        "customProperties": {
+                          "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                        }
+                      },
+                      {
+                        "value": "Ab Hadley",
+                        "label": "222",
+                        "customProperties": {
+                          "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                        }
+                      },
+                      {
+                        "value": "Ab Hadley",
+                        "label": "333",
+                        "customProperties": {
+                          "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                        }
+                      }
+                      
+                    ]}'
+                        >
+                          <!-- <option>1111</option>
+                          <option>2222</option>
+                          <option>3333</option>
+                          <option>4444</option> -->
+                        </select>
+                      </div>
+                    </div>
+                    
+                  </div>
+  
+                  <!--설계 단가-->
+                <div class="row">
+                  <div class="col-12 col-md-6">
+  
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        설계 수량
+                      </label>
+                          
+                      <!-- Input -->
+                      <input type="text" class="form-control" >
+                      
+                    </div>
+  
+                  </div>
+                  <div class="col-12 col-md-6">
+  
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        단가
+                      </label>
+  
+                      <input type="text" class="form-control" >
+  
+                    </div>
+  
+                  </div>
+  
+                  <div class="col-12 col-md-6">
+  
+                      <!-- Start date -->
+                      <div class="form-group">
+    
+                        <!-- Label -->
+                        <label class="form-label">
+                          금액
+                        </label>
+    
+                        <input type="text" class="form-control" >
+    
+                      </div>
+    
+                    </div>
+                </div> <!-- / .row -->
+                  
+                <!-- 단가 산출 근거 -->
+                <div class="form-group">
+  
+                  <!-- Label  -->
+                  <label class="form-label">
+                    단가 산출 근거
+                  </label>
+  
+                  <!-- Input -->
+                  <input type="text" class="form-control" >
+  
+                </div>
+                <!--사용예정일-->
+                <div>
+                  <label class="form-label">
+                    사용 예정일
+                  </label>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+  
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+  
+                      <!-- Input -->
+                      <input type="text" class="form-control" placeholder="시작일" data-flatpickr>
+  
+                    </div>
+  
+                    
+                  </div>
+                  <div class="col-12 col-md-6">
+  
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Input -->
+                      <input type="text" class="form-control" placeholder="종료일" data-flatpickr>
+  
+                    </div>
+  
+                  </div>
+                  
+                </div> <!-- / .row -->
+
+                <div class="col-auto" >
+
+                    <!-- Buttons -->
+                    <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                        조달판정요청
+                      </a>
+                    <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                      결재 담당자 변경
+                    </a>
+    
+                  </div>
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5">
+
+              <!-- Buttons -->
+              <a href="#" class="btn w-100 btn-primary">
+                결재상신
+              </a>
+              
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+  </body>
+</html>

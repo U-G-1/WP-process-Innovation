@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Dashkit"}}
+  </head>
+  <body>
+
+    <!-- MODALS -->
+    {{> partials/modals}}
+
+    <!-- OFFCANVAS -->
+    {{> partials/offcanvas}}
+
+    <!-- NAVIGATION -->
+    {{> partials/navs category="pages" subcategory="project" page="project-new.html"}}
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      {{#if demoMode}}{{> navs/topbar}}{{/if}}
+      {{#is navPosition 'combo'}}{{> navs/topbar}}{{/is}}
+
+      <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <!-- <h6 class="header-pretitle">
+                      New project
+                    </h6> -->
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                      자재 출고 요청
+                    </h1>
+
+                  </div>
+                  
+                </div> <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4">
+
+                <!-- 출고 요청 -->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  업무 연락
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" >
+
+              </div>
+
+              
+              <!-- 자재 -->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      자재 유형
+                    </label>
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" readonly>
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      자재 번호
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        자재 상태
+                      </label>
+  
+                      <input type="text" class="form-control" >
+  
+                    </div>
+  
+                  </div>
+                  <div class="col-12 col-md-6">
+
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        품명 및 규격
+                      </label>
+                          
+                      <!-- Input -->
+                      <input type="text" class="form-control" >
+                      
+                    </div>
+  
+                  </div>
+              </div> <!-- / .row -->
+
+              <!--품명-->
+              <div class="row">
+                
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      단위
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+
+                <div class="col-12 col-md-6">
+
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        가용 수량
+                      </label>
+  
+                      <input type="text" class="form-control" >
+  
+                    </div>
+  
+                  </div>
+              </div> <!-- / .row -->
+
+              <!--출고-->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      출고 요청 수량
+                    </label>
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      출고 수량
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+
+              </div> <!-- / .row -->
+              
+              <!--저장-->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      저장 위치
+                    </label>
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      BIn
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+
+              </div> <!-- / .row -->
+
+              <!--사용예정일-->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  사용예정일
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" data-flatpickr>
+
+              </div>
+
+              <!-- 자재 -->
+              <!-- Label -->
+              <div>
+                <label class="form-label">
+                  요청 부서
+                </label>
+                </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <div class="form-group">
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <div class="form-group">
+
+                    <input type="text" class="form-control" readonly>
+
+                  </div>
+
+                </div>
+                
+              </div> <!-- / .row -->
+
+              
+
+             
+
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5">
+
+              <div class="col-auto" >
+
+                <!-- Buttons -->
+                <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                    결재상신
+                  </a>
+                <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                  결재 담당자 변경
+                </a>
+                <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                    저장 후 추가
+                </a>
+
+              </div>
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+  </body>
+</html>

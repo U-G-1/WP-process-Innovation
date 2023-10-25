@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Dashkit"}}
+  </head>
+  <body>
+
+    <!-- MODALS -->
+    {{> partials/modals}}
+
+    <!-- OFFCANVAS -->
+    {{> partials/offcanvas}}
+
+    <!-- NAVIGATION -->
+    {{> partials/navs category="pages" subcategory="project" page="project-new.html"}}
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      {{#if demoMode}}{{> navs/topbar}}{{/if}}
+      {{#is navPosition 'combo'}}{{> navs/topbar}}{{/is}}
+
+      <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <!-- <h6 class="header-pretitle">
+                      New project
+                    </h6> -->
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                      작업실적 입력
+                    </h1>
+
+                  </div>
+                  <div class="col-auto">
+
+                    <!-- Buttons -->
+                    
+                    <!-- <a href="#!" class="btn btn-primary ms-2 lift">
+                      TM 
+                    </a> -->
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4">
+
+              <!-- Project description -->
+              <div class="form-group">
+
+                <!-- Label -->
+                <label class="form-label mb-1">
+                  고장부위(작업부위)
+                </label>
+
+                <!-- Text -->
+                <!-- <small class="form-text text-muted">
+                  This is how others will learn about the project, so make it good!
+                </small> -->
+
+                <!-- Textarea -->
+                <div data-quill></div>
+
+              </div>
+              <div class="form-group">
+
+                <!-- Label -->
+                <label class="form-label mb-1">
+                  고장모드(내용)
+                </label>
+
+                <!-- Text -->
+                <!-- <small class="form-text text-muted">
+                  This is how others will learn about the project, so make it good!
+                </small> -->
+
+                <!-- Textarea -->
+                <div data-quill></div>
+
+              </div>
+              <div class="form-group">
+
+                <!-- Label -->
+                <label class="form-label mb-1">
+                  고장원인
+                </label>
+
+                <!-- Text -->
+                <!-- <small class="form-text text-muted">
+                  This is how others will learn about the project, so make it good!
+                </small> -->
+
+                <!-- Textarea -->
+                <div data-quill></div>
+
+              </div>
+              <div class="form-group">
+
+                <!-- Label -->
+                <label class="form-label mb-1">
+                  예방(정비)업무
+                </label>
+
+                <!-- Text -->
+                <!-- <small class="form-text text-muted">
+                  This is how others will learn about the project, so make it good!
+                </small> -->
+
+                <!-- Textarea -->
+                <div data-quill></div>
+
+              </div>
+              <div class="form-group">
+
+                <!-- Label -->
+                <label class="form-label mb-1">
+                  작업내용
+                </label>
+
+                <!-- Text -->
+                <!-- <small class="form-text text-muted">
+                  This is how others will learn about the project, so make it good!
+                </small> -->
+
+                <!-- Textarea -->
+                <div data-quill></div>
+
+              </div>
+              
+
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5">
+
+              <!-- Buttons -->
+              <a href="#" class="btn w-100 btn-primary">
+                감독부서로 걸재상신
+              </a>
+              <!-- <a href="#" class="btn w-100 btn-link text-muted mt-2">
+                발행 취소
+              </a> -->
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+  </body>
+</html>

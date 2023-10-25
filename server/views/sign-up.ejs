@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="/assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Map CSS -->
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css"
+    />
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="/assets/css/libs.bundle.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/assets/css/theme.bundle.css" />
+
+    <!-- Title -->
+    <title>Dashkit</title>
+  </head>
+  <body
+    class="d-flex align-items-center bg-auth border-top border-top-2 border-primary"
+  >
+    <!-- CONTENT
+    ================================================== -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-5 col-xl-4 my-5">
+          <!-- Heading -->
+          <h1 class="display-4 text-center mb-3">Sign up</h1>
+
+          <!-- Subheading -->
+          <p class="text-muted text-center mb-5">
+            Free access to our dashboard.
+          </p>
+
+          <!-- Form -->
+          <form action="/user/signup" method="post">
+            <!-- Email address -->
+            <div class="form-group">
+              <!-- Label -->
+              <label class="form-label"> Employee Number </label>
+
+              <!-- Input -->
+              <input
+                type="number"
+                name="id"
+                class="form-control"
+                placeholder="Enter your employee number"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <!-- Label -->
+              <label class="form-label"> Employee Name </label>
+
+              <!-- Input -->
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Enter your employee number"
+                required
+              />
+            </div>
+
+            <!-- Position -->
+            <div class="form-group">
+              <!-- Label -->
+              <label class="form-label"> Position </label>
+
+              <!-- Input-->
+              <input
+                type="number"
+                name="position"
+                class="form-control"
+                placeholder="Enter"
+                your
+                position
+                required
+              />
+            </div>
+            <div class="form-group">
+              <!-- Label -->
+              <label class="form-label"> 부서명 </label>
+
+              <!-- Input-->
+              <input
+                type="text"
+                name="department"
+                class="form-control"
+                placeholder="Enter"
+              />
+            </div>
+
+            <div class="form-group">
+              <!-- Label -->
+              <label class="form-label"> 세부부서명 </label>
+
+              <!-- Input-->
+              <input
+                type="text"
+                name="sub_dep"
+                class="form-control"
+                placeholder="Enter"
+              />
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+              <!-- Label -->
+              <label class="form-label"> Password </label>
+
+              <!-- Input group -->
+              <div class="input-group input-group-merge">
+                <!-- Input -->
+                <input
+                  class="form-control"
+                  type="password"
+                  name="pw"
+                  placeholder="Enter your password"
+                />
+
+                <!-- Icon -->
+                <span class="input-group-text">
+                  <i class="fe fe-eye"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button class="btn btn-lg w-100 btn-primary mb-3">Sign up</button>
+
+            <!-- Link -->
+            <div class="text-center">
+              <small class="text-muted text-center">
+                Already have an account? <a href="sign-in.html">Log in</a>.
+              </small>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- / .row -->
+    </div>
+    <!-- / .container -->
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+
+    <!-- Vendor JS -->
+    <script src="/assets/js/vendor.bundle.js"></script>
+
+    <!— Theme JS —>
+    <script src="/assets/js/theme.bundle.js"></script>
+  </body>
+</html>

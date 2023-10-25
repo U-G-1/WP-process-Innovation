@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Dashkit"}}
+  </head>
+  <body>
+
+    <!-- MODALS -->
+    {{> partials/modals}}
+
+    <!-- OFFCANVAS -->
+    {{> partials/offcanvas}}
+
+    <!-- NAVIGATION -->
+    {{> partials/navs category="pages" subcategory="project" page="project-new.html"}}
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      {{#if demoMode}}{{> navs/topbar}}{{/if}}
+      {{#is navPosition 'combo'}}{{> navs/topbar}}{{/is}}
+
+      <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <!-- <h6 class="header-pretitle">
+                      New project
+                    </h6> -->
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                        지입/외주/임차 검수요청서 작성
+                    </h1>
+
+                  </div>
+                  
+                </div> <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4">
+
+                <!--통보내용-->
+                <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label mb-1">
+                      통보내용
+                    </label>
+    
+                    <!-- Text -->
+                    <!-- <small class="form-text text-muted">
+                      This is how others will learn about the project, so make it good!
+                    </small> -->
+    
+                    <!-- Textarea -->
+                    <div data-quill></div>
+    
+                </div>
+             
+                <!-- Project cover -->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label mb-1">
+                  특기사항 및 청부서류
+                </label>
+
+                <!-- Textarea -->
+                <div data-quill></div>
+                
+
+                <!-- Dropzone -->
+                <div class="dropzone dropzone-single mb-3" data-dropzone='{"url": "https://", "maxFiles": 1, "acceptedFiles": "image/*"}'>
+
+                  <!-- Fallback -->
+                  <div class="fallback">
+                    <div class="form-group">
+                      <label class="form-label" for="projectCoverUploads">Choose file</label>
+                      <input class="form-control" type="file" id="projectCoverUploads">
+                    </div>
+                  </div>
+
+                  <!-- Preview -->
+                  <div class="dz-preview dz-preview-single">
+                    <div class="dz-preview-cover">
+                      <img class="dz-preview-img" src="data:image/svg+xml,%3csvg3c/svg%3e" alt="..." data-dz-thumbnail>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+                  <!--조달구분-->
+                <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 구분 </label>
+                      <select
+                        class="form-select mb-3"
+                        
+                        data-choices='{"searchEnabled": false, "choices": [
+                        {
+                          "value": "",
+                          "label": "&nbsp;",
+                          "selected": true,
+                          "disabled": true,
+                          "placeholder": true
+                        },
+                    {
+                      "value": "간이정비",
+                      "label": "지입",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "외주",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "임차",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    }
+                    
+                  ]}'
+                      >
+                        <!-- <option>1111</option>
+                        <option>2222</option>
+                        <option>3333</option>
+                        <option>4444</option> -->
+                      </select>
+                    </div>
+                </div>
+  
+                  <!--자재 유형-->
+                  <div class="row d-flex align-items-center">
+                    <div class="col-12 col-md-6">
+                      <!-- Start date -->
+                      <div class="form-group">
+                        <!-- Label -->
+                        <label class="form-label"> 품명 및 규격 </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          style="height: 43px"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <!-- Start date -->
+                      <div class="form-group">
+                        <!-- Label -->
+                        <label class="form-label"> 단위 </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          style="height: 43px"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                    
+                  </div>
+  
+                  <!--품명 및 규격-->
+                  <div class="row d-flex align-items-center">
+                    <div class="col-12 col-md-6">
+                      <!-- Start date -->
+                      <div class="form-group">
+                        <!-- Label -->
+                        <label class="form-label"> 계획수량 </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          style="height: 43px"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <!-- Start date -->
+                      <div class="form-group">
+                        <!-- Label -->
+                        <label class="form-label"> 검수요청 </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          style="height: 43px"
+                          
+                        />
+                      </div>
+                    </div>
+                    
+                  </div>
+  
+
+                
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5">
+
+              <!-- Buttons -->
+              <div class="col-auto" >
+
+                <!-- Buttons -->
+                <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                    결재상신
+                  </a>
+                <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                  결재 담당자 변경
+                </a>
+                <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 200px;">
+                  다음
+                </a>
+
+              </div>
+              
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+  </body>
+</html>

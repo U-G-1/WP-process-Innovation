@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Dashkit"}}
+  </head>
+  <body>
+
+    <!-- MODALS -->
+    {{> partials/modals}}
+
+    <!-- OFFCANVAS -->
+    {{> partials/offcanvas}}
+
+    <!-- NAVIGATION -->
+    {{> partials/navs category="pages" subcategory="project" page="project-new.html"}}
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      {{#if demoMode}}{{> navs/topbar}}{{/if}}
+      {{#is navPosition 'combo'}}{{> navs/topbar}}{{/is}}
+
+      <div class="{{#is navPosition 'sidenav || combo'}}container-fluid{{/is}}{{#is navPosition 'topnav'}}container{{/is}}">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <!-- <h6 class="header-pretitle">
+                      New project
+                    </h6> -->
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                      TM 발행
+                    </h1>
+
+                  </div>
+                  <div class="col-auto">
+
+                    <!-- Buttons -->
+                    
+                    <a href="#!" class="btn btn-primary ms-2 lift">
+                      TM 
+                    </a>
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4">
+
+              <!-- 설비 -->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      설비번호
+                    </label>
+                        
+                        <!-- Select -->
+                    <select class="form-control" data-choices='{"removeItemButton": true}' multiple>
+                      <option>1111</option>
+                      <option>2222</option>
+                      <option>3333</option>
+                      <option>4444</option>
+                    </select>
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      설비명
+                    </label>
+
+                    <input type="text" class="form-control" readonly>
+
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <!-- 요청명 -->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  요청명
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" >
+
+              </div>
+
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  요청일시
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" data-flatpickr>
+
+              </div>
+
+              <div>
+                <label class="form-label"> 요청부서 </label>
+              </div>
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <!-- Select -->
+                    <input
+                      type="text"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  요청자
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control">
+
+              </div>
+
+              <!--감독부서-->
+              <div>
+                <label class="form-label"> 감독부서 </label>
+                <button>+</button>
+              </div>
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <!-- Select -->
+                    <select
+                      class="form-control"
+                      data-choices='{"removeItemButton": true}'
+                      multiple
+                      style="height: 43px"
+                    >
+                      <option>1111</option>
+                      <option>2222</option>
+                      <option>3333</option>
+                      <option>4444</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label"> 감독부서(2) </label>
+              </div>
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <!-- Select -->
+                    <select
+                      class="form-control"
+                      data-choices='{"removeItemButton": true}'
+                      multiple
+                      style="height: 43px"
+                    >
+                      <option>1111</option>
+                      <option>2222</option>
+                      <option>3333</option>
+                      <option>4444</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label class="form-label"> 감독부서(3) </label>
+              </div>
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <!-- Select -->
+                    <select
+                      class="form-control"
+                      data-choices='{"removeItemButton": true}'
+                      multiple
+                      style="height: 43px"
+                    >
+                      <option>1111</option>
+                      <option>2222</option>
+                      <option>3333</option>
+                      <option>4444</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      style="height: 43px"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label">
+                  증상
+                </label>
+              </div>
+              <div class="row">
+                
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    
+                        
+                        <!-- Select -->
+                    <select class="form-control" data-choices='{"removeItemButton": true}' multiple>
+                      <option>1111</option>
+                      <option>2222</option>
+                      <option>3333</option>
+                      <option>4444</option>
+                    </select>
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <input type="text" class="form-control" style="height: 43px" readonly>
+
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <!-- Project description -->
+              <div class="form-group">
+
+                <!-- Label -->
+                <label class="form-label mb-1">
+                  요청 내용
+                </label>
+
+                <!-- Text -->
+                <!-- <small class="form-text text-muted">
+                  This is how others will learn about the project, so make it good!
+                </small> -->
+
+                <!-- Textarea -->
+                <div data-quill></div>
+
+              </div>
+
+              
+
+             
+
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5">
+
+              <!-- Buttons -->
+              <a href="#" class="btn w-100 btn-primary">
+                TM 발행
+              </a>
+              <a href="#" class="btn w-100 btn-link text-muted mt-2">
+                발행 취소
+              </a>
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+  </body>
+</html>

@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Dashkit"}}
+  </head>
+  <body>
+    <!-- MODALS -->
+    {{> partials/modals}}
+
+    <!-- OFFCANVAS -->
+    {{> partials/offcanvas}}
+
+    <!-- NAVIGATION -->
+    {{> partials/navs category="pages" page="workorder.html"}}
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      {{#if demoMode}}{{> navs/topbar}}{{/if}} {{#is navPosition 'combo'}}{{>
+      navs/topbar}}{{/is}}
+
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+            <!-- Form -->
+            <form class="tab-content py-6" id="wizardSteps">
+              <div
+                class="tab-pane fade show active"
+                id="wizardStepOne"
+                role="tabpanel"
+                aria-labelledby="wizardTabOne"
+              >
+                <!-- Header -->
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                    <!-- Pretitle -->
+                    <h6 class="mb-4 text-uppercase text-muted">Step 1 of 3</h6>
+
+                    <!-- Title -->
+                    <h1 class="mb-3">작업오더 생성</h1>
+
+                    <!-- Subtitle -->
+                    <p class="mb-5 text-muted">
+                      본 화면에서는 TM 바탕으로 작업오더 기본 정보를 입력하시오
+                    </p>
+                  </div>
+                </div>
+                <!-- / .row -->
+
+                <!-- Team name -->
+
+                <!-- 운전구분 설비구분 -->
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 운전구분 </label>
+
+                      <!-- Select -->
+                      <select
+                        class="form-select mb-3"
+                        data-choices='{"searchEnabled": false, "choices": [
+                        {
+                          "value": "",
+                          "label": "&nbsp;",
+                          "selected": true,
+                          "disabled": true,
+                          "placeholder": true
+                        },
+                    {
+                      "value": "O/H 간이정비",
+                      "label": "O/H 간이정비",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "비발전분야",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    }
+                    
+                  ]}'
+                      >
+                        <!-- <option>1111</option>
+                        <option>2222</option>
+                        <option>3333</option>
+                        <option>4444</option> -->
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 설비구분 </label>
+
+                      <!-- Select -->
+                      <select
+                        class="form-select mb-3"
+                        data-choices='{"searchEnabled": false, "choices": [
+                        {
+                          "value": "",
+                          "label": "&nbsp;",
+                          "selected": true,
+                          "disabled": true,
+                          "placeholder": true
+                        },
+                    {
+                      "value": "간이정비",
+                      "label": "PSM",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "도급승인",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    }
+                    
+                  ]}'
+                      >
+                        <!-- <option>1111</option>
+                        <option>2222</option>
+                        <option>3333</option>
+                        <option>4444</option> -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <!-- / .row -->
+
+                <!--정비부서-->
+                <div>
+                  <label class="form-label"> 정비부서 </label>
+                </div>
+                <div class="row d-flex align-items-center">
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <select
+                        class="form-select mb-3"
+                        data-choices='{"searchEnabled": false, "choices": [
+                        {
+                          "value": "",
+                          "label": "&nbsp;",
+                          "selected": true,
+                          "disabled": true,
+                          "placeholder": true
+                        },
+                    {
+                      "value": "간이정비",
+                      "label": "111",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "222",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "333",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    }
+                    
+                  ]}'
+                      >
+                        <!-- <option>1111</option>
+                        <option>2222</option>
+                        <option>3333</option>
+                        <option>4444</option> -->
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+
+                      <input
+                        type="text"
+                        class="form-control"
+                        style="height: 43px"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!--작업공기-->
+                <div>
+                  <label class="form-label">
+                    작업 공기
+                  </label>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+  
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+  
+                      <!-- Input -->
+                      <input type="text" class="form-control" placeholder="시작일" data-flatpickr>
+  
+                    </div>
+  
+                    
+                  </div>
+                  <div class="col-12 col-md-6">
+  
+                    <!-- Start date -->
+                    <div class="form-group">
+
+                      <!-- Input -->
+                      <input type="text" class="form-control" placeholder="종료일" data-flatpickr>
+  
+                    </div>
+  
+                  </div>
+                  
+                </div> <!-- / .row -->
+                
+                <!--Red Tag 설계-->
+                <div>
+                  <h3 class="mb-3">Red Tag 설계</h>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+  
+                    
+                    <div class="form-group">
+  
+                      <label class="form-label"> 대상기기 번호 </label>
+                      <!-- Input -->
+                      <select
+                      class="form-control"
+                      data-choices='{"removeItemButton": true}'
+                      multiple
+                    >
+                      <option>1111</option>
+                      <option>2222</option>
+                      <option>3333</option>
+                      <option>4444</option>
+                    </select>
+                    </div>
+  
+                    
+                  </div>
+                  <div class="col-12 col-md-6">
+  
+                    <!-- Start date -->
+                    <div class="form-group">
+
+                      <label class="form-label"> 대상기기명 </label>
+                      <!-- Input -->
+                      <input type="text" class="form-control" readonly>
+  
+                    </div>
+  
+                  </div>
+
+                  <!-- 조작상태 -->
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 조작 상태 </label>
+                      <select
+                        class="form-select mb-3"
+                        
+                        data-choices='{"searchEnabled": false, "choices": [
+                        {
+                          "value": "",
+                          "label": "&nbsp;",
+                          "selected": true,
+                          "disabled": true,
+                          "placeholder": true
+                        },
+                    {
+                      "value": "간이정비",
+                      "label": "OPEN",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "CLOSED",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    }
+                    
+                  ]}'
+                      >
+                        <!-- <option>1111</option>
+                        <option>2222</option>
+                        <option>3333</option>
+                        <option>4444</option> -->
+                      </select>
+                    </div>
+                  </div>
+
+                </div> <!-- / .row -->
+                
+
+                <!-- Divider -->
+                <hr class="my-5" />
+
+                <!-- Footer -->
+                <div class="nav row align-items-center">
+                  <div class="col-auto">
+                    <!-- Button -->
+                    <button class="btn btn-lg btn-white" type="reset">
+                      TM 정보 확인
+                    </button>
+                  </div>
+                  <div class="col text-center">
+                    <!-- Step -->
+                    <h6 class="text-uppercase text-muted mb-0">Step 1 of 3</h6>
+                  </div>
+                  <div class="col-auto">
+                    <!-- Button -->
+                    <a
+                      class="btn btn-lg btn-primary"
+                      data-toggle="wizard"
+                      href="#wizardStepTwo"
+                      >다음 페이지</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!--2페이지-->
+              <div
+                class="tab-pane fade"
+                id="wizardStepTwo"
+                role="tabpanel"
+                aria-labelledby="wizardTabTwo"
+              >
+                <!-- Header -->
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                    <!-- Pretitle -->
+                    <h6 class="mb-4 text-uppercase text-muted">Step 2 of 3</h6>
+
+                    <!-- Title -->
+                    <h1 class="mb-3">작업오더 생성</h1>
+
+                    <!-- Subtitle -->
+                    <p class="mb-5 text-muted">
+                      본 화면에서는 자재와 경비정보를 입력하세요
+                    </p>
+                  </div>
+                </div>
+                <!-- / .row -->
+
+                <div class="col-auto" >
+                  
+                    <h3 class="mb-3">자재</h>
+                  
+                  <!-- Buttons -->
+                  <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 120px; padding: 3px;">
+                      조달 판정 요청
+                    </a>
+                  <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 130px; padding: 3px;">
+                    결재 담당자 변경
+                  </a>
+                  <a href="#!" class="btn btn-primary ms-2 lift" style="float: right; width: 120px; padding: 3px;">
+                      저장 후 추가
+                  </a>
+  
+                </div>
+
+                <!--조달구분-->
+                <div class="col-12 col-md-6">
+                  <!-- Start date -->
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="form-label"> 조달 구분 </label>
+                    <select
+                      class="form-select mb-3"
+                      
+                      data-choices='{"searchEnabled": false, "choices": [
+                      {
+                        "value": "",
+                        "label": "&nbsp;",
+                        "selected": true,
+                        "disabled": true,
+                        "placeholder": true
+                      },
+                  {
+                    "value": "간이정비",
+                    "label": "지입",
+                    "customProperties": {
+                      "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                    }
+                  },
+                  {
+                    "value": "Ab Hadley",
+                    "label": "외주",
+                    "customProperties": {
+                      "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                    }
+                  },
+                  {
+                    "value": "Ab Hadley",
+                    "label": "임차",
+                    "customProperties": {
+                      "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                    }
+                  }
+                  
+                ]}'
+                    >
+                      <!-- <option>1111</option>
+                      <option>2222</option>
+                      <option>3333</option>
+                      <option>4444</option> -->
+                    </select>
+                  </div>
+                </div>
+
+                <!--자재 유형-->
+                <div class="row d-flex align-items-center">
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 자재 유형 </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        style="height: 43px"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 자재 번호 </label>
+                      <select
+                        class="form-select mb-3"
+                        data-choices='{"searchEnabled": false, "choices": [
+                        {
+                          "value": "",
+                          "label": "&nbsp;",
+                          "selected": true,
+                          "disabled": true,
+                          "placeholder": true
+                        },
+                    {
+                      "value": "간이정비",
+                      "label": "111",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "222",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "333",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    }
+                    
+                  ]}'
+                      >
+                        <!-- <option>1111</option>
+                        <option>2222</option>
+                        <option>3333</option>
+                        <option>4444</option> -->
+                      </select>
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <!--품명 및 규격-->
+                <div class="row d-flex align-items-center">
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 품명 및 규격 </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        style="height: 43px"
+                        
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label"> 단위 </label>
+                      <select
+                        class="form-select mb-3"
+                        data-choices='{"searchEnabled": false, "choices": [
+                        {
+                          "value": "",
+                          "label": "&nbsp;",
+                          "selected": true,
+                          "disabled": true,
+                          "placeholder": true
+                        },
+                    {
+                      "value": "간이정비",
+                      "label": "111",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "222",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    },
+                    {
+                      "value": "Ab Hadley",
+                      "label": "333",
+                      "customProperties": {
+                        "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                      }
+                    }
+                    
+                  ]}'
+                      >
+                        <!-- <option>1111</option>
+                        <option>2222</option>
+                        <option>3333</option>
+                        <option>4444</option> -->
+                      </select>
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <!--설계 단가-->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      설계 수량
+                    </label>
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      단가
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+
+                <div class="col-12 col-md-6">
+
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        금액
+                      </label>
+  
+                      <input type="text" class="form-control" >
+  
+                    </div>
+  
+                  </div>
+              </div> <!-- / .row -->
+                
+              <!-- 단가 산출 근거 -->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  단가 산출 근거
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" >
+
+              </div>
+              <!--사용예정일-->
+              <div>
+                <label class="form-label">
+                  사용 예정일
+                </label>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+
+                    <!-- Input -->
+                    <input type="text" class="form-control" placeholder="시작일" data-flatpickr>
+
+                  </div>
+
+                  
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Input -->
+                    <input type="text" class="form-control" placeholder="종료일" data-flatpickr>
+
+                  </div>
+
+                </div>
+                
+              </div> <!-- / .row -->
+
+
+              <div>
+                <h3 class="mb-3">경비</h>
+              </div>
+              
+              <!-- 경비 항목 -->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  경비 항목
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" >
+
+              </div>
+              <!-- 내역 -->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  내역
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" >
+
+              </div>
+              <!--단위-->
+              <div class="col-12 col-md-6">
+                <!-- Start date -->
+                <div class="form-group">
+                  <!-- Label -->
+                  <label class="form-label"> 단위 </label>
+                  <select
+                    class="form-select mb-3"
+                    
+                    data-choices='{"searchEnabled": false, "choices": [
+                    {
+                      "value": "",
+                      "label": "&nbsp;",
+                      "selected": true,
+                      "disabled": true,
+                      "placeholder": true
+                    },
+                {
+                  "value": "간이정비",
+                  "label": "111",
+                  "customProperties": {
+                    "avatarSrc": "../assets/img/avatars/profiles/avatar-1.jpg"
+                  }
+                },
+                {
+                  "value": "Ab Hadley",
+                  "label": "222",
+                  "customProperties": {
+                    "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                  }
+                },
+                {
+                  "value": "Ab Hadley",
+                  "label": "333",
+                  "customProperties": {
+                    "avatarSrc": "../assets/img/avatars/profiles/avatar-2.jpg"
+                  }
+                }
+                
+              ]}'
+                  >
+                    <!-- <option>1111</option>
+                    <option>2222</option>
+                    <option>3333</option>
+                    <option>4444</option> -->
+                  </select>
+                </div>
+              </div>
+              <!--경비 단가-->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      수량
+                    </label>
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      단가
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+
+                <div class="col-12 col-md-6">
+
+                    <!-- Start date -->
+                    <div class="form-group">
+  
+                      <!-- Label -->
+                      <label class="form-label">
+                        금액
+                      </label>
+  
+                      <input type="text" class="form-control" >
+  
+                    </div>
+  
+                  </div>
+              </div> <!-- / .row -->
+              <!-- 단가 산출 근거 -->
+              <div class="form-group">
+
+                <!-- Label  -->
+                <label class="form-label">
+                  단가 산출 근거
+                </label>
+
+                <!-- Input -->
+                <input type="text" class="form-control" >
+
+              </div>
+                
+
+                <!-- Divider -->
+                <hr class="my-5" />
+
+                <!-- Footer -->
+                <div class="nav row align-items-center">
+                  <div class="col-auto">
+                    <!-- Button -->
+                    <a
+                      class="btn btn-lg btn-white"
+                      data-toggle="wizard"
+                      href="#wizardStepOne"
+                      >이전페이지</a
+                    >
+                  </div>
+                  <div class="col text-center">
+                    <!-- Step -->
+                    <h6 class="text-uppercase text-muted mb-0">Step 2 of 3</h6>
+                  </div>
+                  <div class="col-auto">
+                    <!-- Button -->
+                    <a
+                      class="btn btn-lg btn-primary"
+                      data-toggle="wizard"
+                      href="#wizardStepThree"
+                      >다음페이지</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!--3페이지-->
+              <div
+                class="tab-pane fade"
+                id="wizardStepThree"
+                role="tabpanel"
+                aria-labelledby="wizardTabThree"
+              >
+                <!-- Header -->
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                    <!-- Pretitle -->
+                    <h6 class="mb-4 text-uppercase text-muted">Step 3 of 3</h6>
+
+                    <!-- Title -->
+                    <h1 class="mb-3">작업오더 생성</h1>
+
+                    <!-- Subtitle -->
+                    <p class="mb-5 text-muted">
+                      본 화면에서는 안전작업 정보를 입력하세요
+                    </p>
+                  </div>
+                </div>
+                <!-- / .row -->
+
+                <!--중요작업-->
+                <div class="form-group">
+
+                  <!-- Label -->
+                  <h3 class="form-label mb-1">
+                    중요작업
+                  </h3>
+                  <input type='checkbox' name='main' value='main' /> 중요작업승인요청서(수기 운영)
+                  
+                  
+                </div>
+                <div class="form-group">
+                  <h3 class="form-label mb-1">
+                    위험작업
+                  </h3>
+                  <div>
+                  <label class="form-label mb-1 text-muted">
+                    주요작업
+                  </label>
+                  </div>
+                  <input type='checkbox' name='danger' value='1' /> 화기사용
+                  <input type='checkbox' name='danger' value='2' /> 일반위험
+                  <div>
+                  <label class="form-label mb-1 text-muted">
+                    추가(보충)작업
+                  </label>
+                  </div>
+                  <input type='checkbox' name='danger' value='3' /> 밀폐공간
+                  <input type='checkbox' name='danger' value='4' /> 고소작업
+                  <input type='checkbox' name='danger' value='5' /> 중량물작업
+                  <input type='checkbox' name='danger' value='6' /> 정전작업
+                  <input type='checkbox' name='danger' value='7' /> 굴착작업
+                  <input type='checkbox' name='danger' value='8' /> 잠수작업
+                  <input type='checkbox' name='danger' value='9' /> 방사선사용
+                  <input type='checkbox' name='danger' value='10' /> 화학물취급
+
+                </div>
+                <div class="form-group">
+
+                  <h3 class="form-label mb-1">
+                    환경화학
+                  </h3>
+                  <input type='checkbox' name='eco' value='1' /> 폐기물발생
+                  <input type='checkbox' name='eco' value='2' /> 배수/배유
+                  <input type='checkbox' name='eco' value='3' /> 토사반출
+                  <input type='checkbox' name='eco' value='4' /> 소음/진동/먼지
+                  <input type='checkbox' name='eco' value='5' /> 에너지절감
+                  <input type='checkbox' name='eco' value='6' /> 기타환경민원
+  
+                </div>
+                
+
+
+                <!--작업 시방-->
+                <div class="form-group">
+
+                  <!-- Label -->
+                  <label class="form-label mb-1">
+                    작업 시방
+                  </label>
+  
+                  <!-- Text -->
+                  <!-- <small class="form-text text-muted">
+                    This is how others will learn about the project, so make it good!
+                  </small> -->
+  
+                  <!-- Textarea -->
+                  <div data-quill></div>
+  
+                </div>
+
+                <!--작업일자-->
+                <div><!-- Label -->
+                  <label class="form-label"> 작업일자 </label>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      
+                      <!-- Input -->
+                      <input type="text"  class="form-control" placeholder="시작일" data-flatpickr />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <!-- Start date -->
+                    <div class="form-group">
+                      
+                      <!-- Input -->
+                      <input type="text" class="form-control" placeholder="종료일" data-flatpickr />
+                    </div>
+                  </div>
+                </div>
+                <!-- / .row -->
+
+                <!--작업시간-->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      작업 허가시간
+                    </label>
+                        
+                    <!-- Input -->
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Start date -->
+                  <div class="form-group">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                      총 작업시간
+                    </label>
+
+                    <input type="text" class="form-control" >
+
+                  </div>
+
+                </div>
+
+              </div> <!-- / .row -->                
+
+                <!-- Divider -->
+                <hr class="mt-5 mb-5" />
+
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <!-- Private project -->
+                    <div class="form-group">
+                      <!-- Label -->
+                      <label class="form-label mb-1"> Private project </label>
+
+                      <!-- Text -->
+                      <small class="form-text text-muted">
+                        If you are available for hire outside of the current
+                        situation, you can encourage others to hire you.
+                      </small>
+
+                      <!-- Switch -->
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          id="switchOne"
+                          type="checkbox"
+                        />
+                        <label class="form-check-label" for="switchOne"></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <!— Warning —>
+                    <div class="card bg-light border">
+                      <div class="card-body">
+                        <!— Heading —>
+                        <h4 class="mb-2">
+                          <i class="fe fe-alert-triangle"></i> Warning
+                        </h4>
+
+                        <!— Text —>
+                        <p class="small text-muted mb-0">
+                          Once a project is made private, you cannot revert it
+                          to a public project.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!— / .row —>
+
+                <!— Divider —>
+                <hr class="my-5" />
+
+                <!— Footer —>
+                <div class="nav row align-items-center">
+                  <div class="col-auto">
+                    <!— Button —>
+                    <a
+                      class="btn btn-lg btn-white"
+                      data-toggle="wizard"
+                      href="#wizardStepTwo"
+                      >Back</a
+                    >
+                  </div>
+                  <div class="col text-center">
+                    <!— Step —>
+                    <h6 class="text-uppercase text-muted mb-0">Step 3 of 3</h6>
+                  </div>
+                  <div class="col-auto">
+                    <!— Button —>
+                    <button class="btn btn-lg btn-primary" type="submit">
+                      결재상신
+                    </button>
+                    <a
+                      class="btn btn-lg btn-white"
+                      data-toggle="wizard"
+                      href="#wizardStepTwo"
+                      >결재 담당자 변경</a>
+                    
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!— / .main-content —>
+
+    <!— JAVASCRIPT —>
+    {{> partials/scripts}}
+  </body>
+</html>
